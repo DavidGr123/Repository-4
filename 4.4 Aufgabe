@@ -1,0 +1,53 @@
+## Exercise 4: Single Index-Model
+
+#Now we are going to estimate the Portfolio Input Parameters with the Single-Index Model. Use your ten assets and additionally choose the S&P500 as index (same returns etc).
+
+
+#getting 10 stocks from sp500 index
+
+AAPL <- tq_get("AAPL", get = "stock.prices", from =  "2000-01-01", to = "2019-09-17")
+AMZN <- tq_get("AMZN", get = "stock-prices", from = "2000-01-01", to = "2019-09-17")
+MSFT <- tq_get("MSFT", get = "stock.prices", from = "2000-01-01", to = "2019-09-17")
+GOOG <- tq_get("MSFT", get = "stock.prices", from = "2000-01-01", to = "2019-09-17")
+CSCO <- tq_get("CSCO", get = "stock.prices", from =  "2000-01-01", to = "2019-09-17")
+BA <- tq_get("BA", get = "stock.prices", from =  "2000-01-01", to = "2019-09-17")
+FB <- tq_get("FB", get = "stock.prices", from =  "2000-01-01", to = "2019-09-17")
+NVDA <- tq_get("NVDA", get = "stock.prices", from =  "2000-01-01", to = "2019-09-17")
+AMGN <- tq_get("AMGN", get = "stock.prices", from =  "2000-01-01", to = "2019-09-17")
+GOS <- tq_get("GOS", get = "stock.prices", from =  "2000-01-01", to = "2019-09-17")
+
+```{r Create baseline returns}
+#to compare it with an index
+SP500 <- "^GSPC" %>%
+  tq_get(get = "stock.prices", from = "2000-01-01", to = "2019-09-17")
+monthly_returns_baseline
+
+a) Regress all stocks on the index. Show alpha, beta and residual variance. Calculate systematic and firm-specific risk. Are there any significant alphas? (You should double check with the appropriate `PerformanceAnalytics` Functions)
+
+plot(GOOG$date, SP500$adjusted,GOOG$adjusted, type = "line")
+
+ggplot(aes(x=AAPL$adjusted) + GOOG$adjusted
+
+       
+       
+
+AAPL <- AAPL[-1]
+SP500 <- SP500[-1]
+is.Date(SP500$date,AAPL$date)
+is.Date(SP500$date)
+
+is.Date(AAPL$date)
+
+
+
+# Alpha
+
+CAPM.alpha(SP500,AAPL,)
+
+
+# b) Extract the betas and calculate systematic and unsystematic risk, derive the whole covariance matrix. To do this you can use _CH15_Factor_Modfels_for_Asset_Returns.pdf (15.3.1)_ and the code
+# implemented in the function sharpeFactorEstimator that you find [here](http://financewithr.blogspot.com/2013/06/portfolio-optimization-using-single.html) (please do not just copy everything, but try to understand what you are doing, e.g. check why and if G.hat has the same values as found by the multivariate regression).
+
+# c) Now use the _custom-moments_ functions from Exercise 2 to implement the single-factor model into the portfolio optimization framework and plot the efficient frontier using the parameters estimated by the single factor model next to the EF of the full-covariance model. Calculate MVP, TP etc. and work out the differences in weights, portfolio return and portfolio risk.
+
+

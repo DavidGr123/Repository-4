@@ -928,6 +928,7 @@ opt1
 ```
 
 
+
 ## Exercise 4: Single Index-Model*
 
 *Now we are going to estimate the Portfolio Input Parameters with the Single-Index Model. Use your ten assets and additionally choose the S&P500 as index (same returns etc).*
